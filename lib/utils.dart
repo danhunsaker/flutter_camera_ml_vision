@@ -18,8 +18,8 @@ InputImageData buildMetaData(
   InputImageRotation rotation,
 ) {
   return InputImageData(
-    inputImageFormat: InputImageFormatMethods.fromRawValue(image.format.raw) ??
-        InputImageFormat.NV21,
+    inputImageFormat: InputImageFormatValue.fromRawValue(image.format.raw) ??
+        InputImageFormat.nv21,
     size: Size(image.width.toDouble(), image.height.toDouble()),
     imageRotation: rotation,
     planeData: image.planes
@@ -50,13 +50,13 @@ Future<T> _detect<T>(
 InputImageRotation _rotationIntToImageRotation(int rotation) {
   switch (rotation) {
     case 0:
-      return InputImageRotation.Rotation_0deg;
+      return InputImageRotation.rotation0deg;
     case 90:
-      return InputImageRotation.Rotation_90deg;
+      return InputImageRotation.rotation90deg;
     case 180:
-      return InputImageRotation.Rotation_180deg;
+      return InputImageRotation.rotation180deg;
     default:
       assert(rotation == 270);
-      return InputImageRotation.Rotation_270deg;
+      return InputImageRotation.rotation270deg;
   }
 }

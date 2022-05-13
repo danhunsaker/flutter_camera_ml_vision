@@ -1,4 +1,3 @@
-import 'package:google_ml_kit/google_ml_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_camera_ml_vision/flutter_camera_ml_vision.dart';
 
@@ -47,12 +46,12 @@ class _MyHomePageState extends State<MyHomePage> {
             onResult: (barcodes) {
               if (barcodes == null ||
                   barcodes.isEmpty ||
-                  data.contains(barcodes.first.value.displayValue) ||
+                  data.contains(barcodes.first.displayValue) ||
                   !mounted) {
                 return;
               }
               setState(() {
-                data.add(barcodes.first.value.displayValue);
+                data.add(barcodes.first.displayValue);
               });
             },
             onDispose: () {
