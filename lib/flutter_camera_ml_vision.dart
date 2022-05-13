@@ -3,7 +3,6 @@ library flutter_camera_ml_vision;
 import 'dart:async';
 import 'dart:io';
 import 'dart:typed_data';
-import 'dart:ui';
 
 import 'package:camera/camera.dart';
 import 'package:collection/collection.dart';
@@ -15,6 +14,7 @@ import 'package:flutter/services.dart';
 import 'package:visibility_detector/visibility_detector.dart';
 
 export 'package:camera/camera.dart';
+export 'package:google_ml_kit/google_ml_kit.dart';
 
 part 'utils.dart';
 

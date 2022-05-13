@@ -1,7 +1,5 @@
-import 'dart:developer';
 import 'dart:ui';
 
-import 'package:google_ml_kit/google_ml_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_camera_ml_vision/flutter_camera_ml_vision.dart';
 
@@ -56,7 +54,7 @@ class _MyHomePageState extends State<MyHomePage> {
               }
 
               setState(() {
-                data.add(barcode.value.displayValue);
+                data.add(barcode.displayValue);
               });
             },
             child: Text('Scan product'),
