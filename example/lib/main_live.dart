@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+  MyHomePage({Key? key, required this.title}) : super(key: key);
 
   final String title;
 
@@ -44,14 +44,13 @@ class _MyHomePageState extends State<MyHomePage> {
             detector: scanner.processImage,
             resolution: ResolutionPreset.high,
             onResult: (barcodes) {
-              if (barcodes == null ||
-                  barcodes.isEmpty ||
+              if (barcodes.isEmpty ||
                   data.contains(barcodes.first.displayValue) ||
                   !mounted) {
                 return;
               }
               setState(() {
-                data.add(barcodes.first.displayValue);
+                data.add(barcodes.first.displayValue!);
               });
             },
             onDispose: () {
@@ -86,7 +85,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   children: <Widget>[
                     ElevatedButton(
                       onPressed: () {
-                        _scanKey.currentState.toggle();
+                        _scanKey.currentState?.toggle();
                       },
                       child: Text('Start/Pause camera'),
                     ),

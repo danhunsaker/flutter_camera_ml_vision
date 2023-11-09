@@ -2,7 +2,6 @@ library flutter_camera_ml_vision;
 
 import 'dart:async';
 import 'dart:io';
-import 'dart:typed_data';
 
 import 'package:camera/camera.dart';
 import 'package:collection/collection.dart';
@@ -76,7 +75,7 @@ class CameraMlVisionState<T> extends State<CameraMlVision<T>>
   @override
   void initState() {
     super.initState();
-    WidgetsBinding.instance!.addObserver(this);
+    WidgetsBinding.instance.addObserver(this);
     _initialize();
   }
 

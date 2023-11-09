@@ -10,15 +10,14 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  camera: ^0.9.4+24
-  collection: ^1.15.0
+  camera: ^0.10.5+5
+  collection: ^1.17.2
   device_info: ^2.0.3
-  google_ml_kit: ^0.11.0
+  google_ml_kit: ^0.16.3
   path_provider: ^2.0.10
   pedantic: ^1.11.1
-  visibility_detector: ^0.3.2
+  visibility_detector: ^0.4.0+2
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-    

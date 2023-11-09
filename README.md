@@ -16,7 +16,7 @@ First, add `flutter_camera_ml_vision` as a dependency.
 dependencies:
   flutter:
     sdk: flutter
-  flutter_camera_ml_vision: ^3.0.1
+  flutter_camera_ml_vision: ^3.0.2
 ...
 ```
 

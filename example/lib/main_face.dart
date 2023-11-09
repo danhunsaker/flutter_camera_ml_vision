@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+  MyHomePage({Key? key, required this.title}) : super(key: key);
 
   final String title;
 
@@ -48,12 +48,13 @@ class _MyHomePageState extends State<MyHomePage> {
           overlayBuilder: (c) {
             return CustomPaint(
               painter: FaceDetectorPainter(
-                  _scanKey.currentState.cameraValue.previewSize.flipped, _faces,
+                  _scanKey.currentState!.cameraValue!.previewSize!.flipped,
+                  _faces,
                   reflection: cameraLensDirection == CameraLensDirection.front),
             );
           },
           onResult: (faces) {
-            if (faces == null || faces.isEmpty || !mounted) {
+            if (faces.isEmpty || !mounted) {
               return;
             }
             setState(() {
@@ -114,9 +115,9 @@ Rect _reflectionRect(bool reflection, Rect boundingBox, double width) {
 }
 
 Rect _scaleRect({
-  @required Rect rect,
-  @required Size imageSize,
-  @required Size widgetSize,
+  required Rect rect,
+  required Size imageSize,
+  required Size widgetSize,
 }) {
   final scaleX = widgetSize.width / imageSize.width;
   final scaleY = widgetSize.height / imageSize.height;
